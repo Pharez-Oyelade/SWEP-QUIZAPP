@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  /* background-color: #f4f4f9; */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+  display: grid;
+  /* justify-content: center;
+  align-items: center; */
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  min-height: 100dvh;
+
+  background: linear-gradient(135deg, #4c6ef5, #d6336c);
+  transition: background 1s ease-in-out;
+  opacity: 1;
+}
+
+body.grid-row {
+  display: block;
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+  opacity: 0.9;
+}
+
+main {
+  position: relative;
+}
+
+.svg-background {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 20%;
+  height: 100px;
+  z-index: -1;
+}
+
+.svg-background svg {
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+header {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+
+header.grid-row {
+  background: linear-gradient(135deg, #4c6ef5, #d6336c);
+  border-radius: 0px 0px 20px 20px;
+  padding: 20px 0;
+}
+
+header span {
+  font-family: "Pacifico", cursive;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+
+  margin-top: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 50px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  margin: 20px;
+  height: 100%;
+
+  /* background: linear-gradient(45deg, #2568a3, #639ddf); */
+  background: #fff;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+#start-container {
+  height: 60dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+button {
+  background: linear-gradient(45deg, #4a90e2, #357ab8);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #357ab8, #4a90e2);
+  transform: scale(1.05);
+}
+
+.button-container button {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  width: 60%;
+  border-radius: 40px;
+  padding: 20px 0;
+}
+
+.button-container button:hover {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-header h3 {
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+
+.quiz-container {
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+
+  display: none;
+}
+
+.options-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options-list li {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.options-list li:hover {
+  background-color: #ddd; /* Change background on hover */
+}
+
+#score-message {
+  display: none;
+}
+
+.question-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#score-message h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  max-width: 600px;
+  margin: auto;
+
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 50px 0;
+}
+
+h3 span {
+  padding: 0 5px;
+}
+
+.option-label {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.restart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#score-message:hover {
+  transform: rotate(1.5deg);
+}
+
+input[type="radio"]:focus {
+  outline: 2px solid #4a90e2;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .question-header h3 {
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    font-size: 1.5rem;
+  }
+
+  .options-list li {
+    margin: 15px auto;
+  }
+}
