@@ -236,6 +236,10 @@ input[type="radio"]:focus {
     grid-template-columns: 1fr;
   }
 
+  header img {
+    margin-top: 20px;
+  }
+
   .question-header h3 {
     color: #333;
     margin-top: 50px;
@@ -246,5 +250,9 @@ input[type="radio"]:focus {
 
   .options-list li {
     margin: 15px auto;
+  }
+
+  .svg-background {
+    display: none;
   }
 }
