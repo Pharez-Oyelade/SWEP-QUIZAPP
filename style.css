@@ -23,7 +23,7 @@ body.grid-row {
   opacity: 0.9;
 }
 
-main {
+.app-wrapper {
   position: relative;
 }
 
