@@ -252,6 +252,16 @@ h3 span {
   font-weight: 500;
 }
 
+.review-header h2 {
+  position: relative;
+}
+
+.review-header svg {
+  position: absolute;
+  left: 10px;
+  opacity: 0.6;
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 16px;
