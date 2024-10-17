@@ -117,6 +117,7 @@ const startContainer = document.getElementById('start-container');
 const csQuizButton = document.getElementById('start-cs-quiz');
 const gkQuizButton = document.getElementById('start-gk-quiz');
 const quizContainer = document.querySelector('.quiz-container');
+const reviewContainer = document.getElementById('review-section');
 const questionText = document.getElementById('question-text');
 const optionsList = document.querySelector('.options-list');
 const prevButton = document.getElementById('prev-button');
@@ -125,8 +126,12 @@ const submitButton = document.getElementById('submit-button');
 const scoreMessage = document.getElementById('score-message');
 const scoreDisplay = document.getElementById('score'); 
 const restartButton = document.getElementById('restart-button');
+const reviewButton = document.getElementById('review-question');
 const quizTitle = document.getElementById('quiz-title');
 const questionHeader = document.querySelector('.question-header');
+
+const reviewList = document.createElement('ul');
+reviewContainer.appendChild(reviewList);
 
 function changeBodyStyle() {
     document.body.classList.add('grid-row');
@@ -163,13 +168,19 @@ gkQuizButton.addEventListener('click', () => {
     // quizTitle.innerText = 'General Knowledge Quiz'
 });
 
-restartButton.addEventListener('click', () => {
-    scoreMessage.style.display = 'none';  
+function restartReset() {
     quizContainer.style.display = 'none'; 
-    startContainer.style.display = 'block';
     submitButton.style.display = 'none'; 
     nextButton.style.display = 'none'; 
     prevButton.style.display ='none';
+    reviewButton.style.display = 'none';
+}
+
+restartButton.addEventListener('click', () => {
+    restartReset();
+    startContainer.style.display = 'block';
+    scoreMessage.style.display = 'none'; 
+    reviewContainer.style.display = 'none';
     restartButton.style.display = 'none'; 
     document.body.classList.remove('grid-row');
     header.classList.remove('grid-row');
@@ -184,6 +195,45 @@ restartButton.addEventListener('click', () => {
     
     quizTitle.innerText = ''
 });
+
+//review button event listener
+reviewButton.addEventListener('click', () => {
+    restartReset();
+    displayReview();
+    reviewContainer.style.display = 'block';
+    quizContainer.style.display = 'none';
+    // scoreMessage.style.display = 'none';
+});
+
+function displayReview() {
+    reviewList.innerHTML = ''; //clear any previous review content
+
+    shuffledQuestions.forEach((question, index) => {
+        const li = document.createElement('li');
+        const questionText = document.createElement('p');
+        questionText.innerText = `${index + 1}. ${question.question}`;
+
+        //list of options for the review
+        const options = document.createElement('ul');
+        question.options.forEach(option => {
+            const optionItem = document.createElement('li');
+            optionItem.innerText = option;
+
+            //Hightlight correct and incorrect answers
+            if (option === userAnswers[index] && option !== question.answer) {
+                optionItem.style.color ='red';
+            } else if (option === question.answer) {
+                optionItem.style.color = 'green';
+            }
+
+            options.appendChild(optionItem);
+        });
+
+        li.appendChild(questionText);
+        li.appendChild(options);
+        reviewList.appendChild(li);
+    })
+}
 
  
 
@@ -230,7 +280,7 @@ function displayQuestions() {
 }
 
 
-// Record the user's answer
+// Record user answer
 function recordAnswer() {
     const selectedOption = document.querySelector('input[name="option"]:checked'); 
     if (selectedOption) {
@@ -283,4 +333,5 @@ function calculateScore() {
     scoreDisplay.innerText = score;
     scoreMessage.style.display = 'block';
     restartButton.style.display = 'block';
+    reviewButton.style.display = 'block';
 }
