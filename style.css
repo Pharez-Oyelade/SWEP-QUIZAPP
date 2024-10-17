@@ -232,6 +232,25 @@ h3 span {
   margin: 20px;
 }
 
+#review-section h2 {
+  margin-top: 50px;
+}
+
+#review-section ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+#review-section ul li {
+  margin-right: 20px;
+}
+
+#review-section ul p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 16px;
@@ -259,5 +278,19 @@ h3 span {
 
   .svg-background {
     display: none;
+  }
+
+  #review-section ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  #review-section ul li {
+    margin-right: 10px;
+  }
+
+  #review-section ul p {
+    font-size: 1.09rem;
+    font-weight: 500;
   }
 }

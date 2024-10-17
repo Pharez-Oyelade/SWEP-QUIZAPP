@@ -40,7 +40,7 @@
         "answer": "Bubble Sort"
     },
     {
-        "question": "Which is ussed to send email?",
+        "question": "Which is used to send email?",
         "options": ["FTP", "HTTP", "SMTP", "IMAP"],
         "answer": "SMTP"
     },
@@ -80,7 +80,7 @@
         "answer": "HTTP"
     },
     {
-        "question": "Which of the folllowing languages is primarily used for developing Andriod apps?",
+        "question": "Which of the folllowing languages is primarily used for developing Android apps?",
         "options": ["Swift", "Java", "Python", "Ruby"],
         "answer": "Java"
     },
