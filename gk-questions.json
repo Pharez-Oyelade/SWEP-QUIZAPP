@@ -1,0 +1,102 @@
+[
+    {
+        "question": "Which planet is known as the red planet?",
+        "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+        "answer": "Mars"
+    },
+    {
+        "question": "Who wrote the play Romeo and Juliet?",
+        "options": ["Charles Dickens", "William Shakespeare", "Leo Tolstoy", "Mark Twain"],
+        "answer": "William Shakespeare"
+    },
+    {
+        "question": "What is capital of Japan?",
+        "options": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+        "answer": "Tokyo"
+    },
+    {
+        "question": "Which element has the chemical symbol 'O'?",
+        "options": ["Gold", "Oxygen", "Osmium", "Ozone"],
+        "answer": "Oxygen"
+    },
+    {
+        "question": "How many continents are there in the world?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "7"
+    },
+    {
+        "question": "Who painted the Mona Lisa",
+        "options": ["Leonardo da Vinci", "Vincent Van Gogh", "Pablo Picasso", "Michelangelo"],
+        "answer": "Leonardo da Vinci"
+    },
+    {
+        "question": "What is largest mammal in the world?",
+        "options": ["Elephant", "Blue Whale", "Giraffe", "Orca"],
+        "answer": "Blue Whale"
+    },
+    {
+        "question": "Which ocean is the largest by area?",
+        "options": ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
+        "answer": "Pacific Ocean"
+    },
+    {
+        "question": "Who discovered penicillin?",
+        "options": ["Alexander Fleming", "Louis Pasteur", "Marie Curie", "Issac Newton"],
+        "answer": "Alexander Fleming"
+    },
+    {
+        "question": "What is the currency of the United Kingdom",
+        "options": ["Euro", "Dollar", "Pound Sterling", "Yen"],
+        "answer": "Pound Sterling"
+    },
+    {
+        "question": "What is the hardest natural substance on Earth?",
+        "options": ["Gold", "Diamond", "Quartz", "Titanium"],
+        "answer": "Diamond"
+    },
+    {
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "options": ["China", "Japan", "South Korea", "Thailand"],
+        "answer": "Japan"
+    },
+    {
+        "question": "Which is the organ in the human body for pumping blood?",
+        "options": ["Lungs", "Brain", "Heart", "Kidney"],
+        "answer": "Heart"
+    },
+    {
+        "question": "What is the largest desert in the world?",
+        "options": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antartic Desert"],
+        "answer": "Antartic Desert"
+    },
+    {
+        "question": "What is the square root of 81?",
+        "options": ["7", "8", "9", "10"],
+        "answer": "9"
+    },
+    {
+        "question": "Who is the author of the Harry Potter series?",
+        "options": ["J.R.R Tolkien", "George R.R Martin", "J.K Rowling", "C.S Lewis"],
+        "answer": "J.K Rowling"
+    },
+    {
+        "question": "Which chemical element has the symbol 'Na'?",
+        "options": ["Nitrogen", "Sodium", "Neon", "Nickel"],
+        "answer": "Sodium"
+    },
+    {
+        "question": "How many bones are in the adult human body?",
+        "options": ["198", "210", "206", "215"],
+        "answer": "206"
+    },
+    {
+        "question": "Waht does the abbreviation 'www' stand for in a website URL?",
+        "options": ["World Wide Web", "Wireless Web Widget", "World Web Wide", "Web Way Window"],
+        "answer": "World Wide Web"
+    },
+    {
+        "question": "Which famous scientist developed the theory of general relativity?",
+        "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+        "answer": "Albert Einstein"
+    }
+]

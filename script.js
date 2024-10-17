@@ -1,115 +1,35 @@
-const csQuizQuestions = [
-    {
-        question: "What does 'HTTP' stand for?",
-        options: ["Hyper Transfer Text Protocol", "Hyper Text Transfer Protocol", "Hyper Time Transfer Protocol", "Hyper Text Temporary Protocol"],
-        answer: "Hyper Text Transfer Protocol",
-    },
-    {
-        question: "What is the time complexity of binary search?",
-        options: ["O(n)", "O(log n)", "O(n log n)", "O(n^2)"],
-        answer: "O(log n)",
-    },
-    {
-        question: "Which data structure is used for implementing recursion?",
-        options: ["Queue", "Linked List", "Stack", "Array"],
-        answer: "Stack",
-    },
-    {
-        question: "Which of the following is not a programming language?",
-        options: ["Python", "HTML", "Java", "Swift"],
-        answer: "HTML",
-    },
-    {
-        question: "What is the primary function of a compiler?",
-        options: ["To execute code", "To interpret code line-by-line", "To convert high-level code to machine code", "To debug the program"],
-        answer: "To convert high-level code to machine code",
-    },
-    {
-        question: "Which of the following is an example of a relational database?",
-        options: ["MongoDB", "MySQL", "Redis", "Cassandra"],
-        answer: "MySQL",
-    },
-    {
-        question: "In object-oriented programming, what is 'inheritance",
-        options: ["A way to define new classes from existing classes", "A feature that restricts access to certain members", "A method to handle errors", "A technique to improve performance"],
-        answer: "A way to define new classes from existing classes",
-    },
-    {
-        question: "What sorting algorithm has the worst-case time complexity of o(n^2)?",
-        options: ["Merge Sort", "Quick Sort", "Bubble Sort", "Heap Sort"],
-        answer: "Bubble Sort",
-    },
-    {
-        question: "Which is ussed to send email?",
-        options: ["FTP", "HTTP", "SMTP", "IMAP"],
-        answer: "SMTP",
-    },
-    {
-        question: "What is the smallest unit of data in a computer",
-        options: ["Byte", "Bit", "Kilobyte", "Megabyte"],
-        answer: "Bit",
-    },
-    
-];
+let csQuizQuestions = [];
+let gkQuizQuestions = [];
 
-const gkQuizQuestions = [
-    {
-        question: "Which planet is known as the red planet?",
-        options: ["Venus", "Mars", "Jupiter", "Saturn"],
-        answer: "Mars",
-    },
-    {
-        question: "Who wrote the play Romeo and Juliet?",
-        options: ["Charles Dickens", "William Shakespeare", "Leo Tolstoy", "Mark Twain"],
-        answer: "William Shakespeare",
-    },
-    {
-        question: "What is capital of Japan?",
-        options: ["Beijing", "Seoul", "Tokyo", "Bangkok"],
-        answer: "Tokyo",
-    },
-    {
-        question: "Which element has the chemical symbol 'O'?",
-        options: ["Gold", "Oxygen", "Osmium", "Ozone"],
-        answer: "Oxygen",
-    },
-    {
-        question: "How many continents are there in the world?",
-        options: ["5", "6", "7", "8"],
-        answer: "7",
-    },
-    {
-        question: "Who painted the Mona Lisa",
-        options: ["Leonardo da Vinci", "Vincent Van Gogh", "Pablo Picasso", "Michelangelo"],
-        answer: "Leonardo da Vinci",
-    },
-    {
-        question: "What is largest mammal in the world?",
-        options: ["Elephant", "Blue Whale", "Giraffe", "Orca"],
-        answer: "Blue Whale",
-    },
-    {
-        question: "Which ocean is the largest by area?",
-        options: ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
-        answer: "Pacific Ocean",
-    },
-    {
-        question: "Who discovered penicillin?",
-        options: ["Alexander Fleming", "Louis Pasteur", "Marie Curie", "Issac Newton"],
-        answer: "Alexander Fleming",
-    },
-    {
-        question: "What is the currency of the United Kingdom",
-        options: ["Euro", "Dollar", "Pound Sterling", "Yen"],
-        answer: "Pound Sterling",
-    },
-    
-];
+
 
 // State variables
 let currentQuestionIndex = 0;
 let userAnswers = [];
 let shuffledQuestions = [];
+
+//Fetch questions 'based on categories
+async function fetchQuestions(category) {
+    const response = await fetch(`${category}.json`);
+    const data = await response.json();
+    return data
+}
+
+// async function fetchQuestions(category) {
+//     try {
+//         const response = await fetch('data/data.json');
+//         const data = await response.json();
+
+//         if (data.categories[category]) {
+//             shuffleQuestions(data.categories[category]);
+//         } else {
+//             console.error(`Category "${category}" not found`);
+//         }
+//     } catch (error) {
+//       console.error('Error fetching quiz data:', error)
+//     }
+// }
+    
 
 //DOM Elements
 const header = document.getElementById('header');
@@ -141,7 +61,8 @@ function changeBodyStyle() {
 
 // Shuffle function to randomize the question order
 function shuffleQuestions(quiz) {
-    shuffledQuestions = quiz.sort(() => Math.random() - 0.5);
+    const shuffled = quiz.sort(() => Math.random() - 0.5);
+    shuffledQuestions = shuffled.slice(0, 10);
 }
 
 // Start the quiz
@@ -152,20 +73,33 @@ function startQuiz(quizQuestions, title) {
 
     shuffleQuestions(quizQuestions);
     // questionHeader.style.display = 'block'
-    quizTitle.innerText = title
+    quizTitle.innerText = title;
     displayQuestions();
 };
 
-csQuizButton.addEventListener('click', () => {
+// csQuizButton.addEventListener('click', async () => {
+//     csQuizQuestions = await fetchQuestions('computerScience')
+//     startQuiz(csQuizQuestions, "Computer Science Quiz");
+//     changeBodyStyle();
+//     // quizTitle.innerText = 'Computer Science Quiz'
+// });
+
+// gkQuizButton.addEventListener('click', () => {
+//     startQuiz(gkQuizQuestions, "General Knowledge Quiz");
+//     changeBodyStyle();
+//     // quizTitle.innerText = 'General Knowledge Quiz'
+// });
+
+csQuizButton.addEventListener('click', async () => {
+    csQuizQuestions = await fetchQuestions('cs-questions');
     startQuiz(csQuizQuestions, "Computer Science Quiz");
     changeBodyStyle();
-    // quizTitle.innerText = 'Computer Science Quiz'
 });
 
-gkQuizButton.addEventListener('click', () => {
+gkQuizButton.addEventListener('click', async () => {
+    gkQuizQuestions = await fetchQuestions('gk-questions');
     startQuiz(gkQuizQuestions, "General Knowledge Quiz");
     changeBodyStyle();
-    // quizTitle.innerText = 'General Knowledge Quiz'
 });
 
 function restartReset() {
@@ -205,11 +139,13 @@ reviewButton.addEventListener('click', () => {
     // scoreMessage.style.display = 'none';
 });
 
+//show review of questions and answers
 function displayReview() {
     reviewList.innerHTML = ''; //clear any previous review content
 
     shuffledQuestions.forEach((question, index) => {
         const li = document.createElement('li');
+        li.style.listStyleType = 'none';
         const questionText = document.createElement('p');
         questionText.innerText = `${index + 1}. ${question.question}`;
 
