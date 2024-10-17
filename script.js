@@ -56,6 +56,7 @@ reviewContainer.appendChild(reviewList);
 function changeBodyStyle() {
     document.body.classList.add('grid-row');
     header.classList.add('grid-row');
+    document.querySelector(".content-wrapper").classList.add('grid-row');
 }
 
 
@@ -117,6 +118,7 @@ restartButton.addEventListener('click', () => {
     reviewContainer.style.display = 'none';
     restartButton.style.display = 'none'; 
     document.body.classList.remove('grid-row');
+    document.querySelector(".content-wrapper").classList.remove('grid-row');
     header.classList.remove('grid-row');
 
     const buttonContainer = document.querySelector('.button-container');

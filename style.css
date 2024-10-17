@@ -5,13 +5,6 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 
-  display: grid;
-  /* justify-content: center;
-  align-items: center; */
-  grid-template-columns: 1fr 3fr;
-  align-items: center;
-  min-height: 100dvh;
-
   background: linear-gradient(135deg, #4c6ef5, #d6336c);
   transition: background 1s ease-in-out;
   opacity: 1;
@@ -21,6 +14,19 @@ body.grid-row {
   display: block;
   background: linear-gradient(to bottom, #e0eafc, #cfdef3);
   opacity: 0.9;
+}
+
+.content-wrapper {
+  display: grid;
+  /* justify-content: center;
+  align-items: center; */
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.content-wrapper.grid-row {
+  display: block;
 }
 
 .app-wrapper {
@@ -229,7 +235,9 @@ h3 span {
 @media (max-width: 600px) {
   body {
     font-size: 16px;
+  }
 
+  .content-wrapper {
     grid-template-columns: 1fr;
   }
 
