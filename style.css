@@ -304,4 +304,8 @@ h3 span {
     font-size: 1.09rem;
     font-weight: 500;
   }
+
+  #score-message h3 {
+    width: 80%;
+  }
 }
