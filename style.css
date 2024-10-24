@@ -186,28 +186,36 @@ button:hover {
   background-color: #ddd; /* Change background on hover */
 }
 
-#score-message {
-  display: none;
-}
-
 .question-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#score-message h3 {
-  display: flex;
+#score-message {
+  display: none;
   align-items: center;
   justify-content: center;
   width: 60%;
   max-width: 600px;
   margin: auto;
+  text-align: center;
 
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  padding: 50px 0;
+  padding-top: 20px;
+}
+
+#score-message h3 {
+  padding: 10px 0 30px 0;
+  font-size: 1.5rem;
+}
+
+.display-message {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 h3 span {
@@ -305,7 +313,11 @@ h3 span {
     font-weight: 500;
   }
 
-  #score-message h3 {
+  #score-message {
     width: 80%;
+  }
+
+  #score-message h3 {
+    font-size: 1.4rem;
   }
 }

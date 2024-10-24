@@ -267,6 +267,15 @@ function calculateScore() {
         }
     });
 
+    const displayMessage = document.querySelector('.display-message');
+    if (score === 10 ) {
+        displayMessage.innerText = "🎉Incredible! Perfect Score!"
+    } else if (score >= 5) {
+        displayMessage.innerText = "Great Job!"
+    } else {
+        displayMessage.innerText = "Don't give up! Try again!"
+    }
+
     quizContainer.style.display = 'none';
     scoreDisplay.innerText = score;
     scoreMessage.style.display = 'block';
